@@ -131,7 +131,10 @@ namespace Xenoblade3
                 return;
             var newdata = Save.ToRawData();
             if (Save.BaseData.Length == newdata.Length && OpenFileName != string.Empty)
+            {
                 File.WriteAllBytes(OpenFileName, newdata);
+                MessageBox.Show("Success");
+            }
         }
 
         private void GoldNum_ValueChanged(object sender, EventArgs e)
@@ -156,14 +159,15 @@ namespace Xenoblade3
 
         private void CharacterList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Character character = CharacterList.SelectedItem as Character;
-            if (character != null)
+            int index = CharacterList.SelectedIndex;
+            if (index != -1)
             {
-                CharacterExpNum.Value = character.Exp;
-                CharacterBounsExpNum.Value = character.BounsExp;
-                CharacterLvNum.Value = character.Level;
-                CharacterClassIDNum.Value = character.ID;
-                ClassDataGridView.DataSource = character.Careers;
+                CharacterExpNum.Value = Save.Characters[index].Exp;
+                CharacterBounsExpNum.Value = Save.Characters[index].BounsExp;
+                CharacterLvNum.Value = Save.Characters[index].Level;
+                CharacterClassIDNum.Value = Save.Characters[index].ID;
+                ClassDataGridView.DataSource = Save.Characters[index].Careers;
+                SoulPointNum.Value = Save.Souls[index].SoulCount;
             }
         }
 
@@ -275,6 +279,15 @@ namespace Xenoblade3
 
             }
             Save.ItemBox.AddItem(ID, Type, Count);
+        }
+
+        private void SoulPointNum_ValueChanged(object sender, EventArgs e)
+        {
+            int index = CharacterList.SelectedIndex;
+            if (index != -1)
+            {
+                Save.Souls[index].SoulCount = (uint)SoulPointNum.Value;
+            }
         }
     }
 }

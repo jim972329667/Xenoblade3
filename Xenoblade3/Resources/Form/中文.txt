@@ -1,3 +1,4 @@
+Main=异度神剑3存档修改器
 Main.openToolStripMenuItem=打开
 Main.saveToolStripMenuItem=保存
 Main.languageToolStripMenuItem=语言
@@ -21,13 +22,14 @@ Main.ItemCount=物品数量
 Main.AddItemButton=添加物品
 Main.DeleteItemButton=删除物品
 Main.ItemType=物品类型
+Main.SoulPoint=灵魂点数
 
-CharacterList.0=Noah
-CharacterList.1=Mio
-CharacterList.2=Eunie
-CharacterList.3=Taion
-CharacterList.4=Lanz
-CharacterList.5=Sena
+CharacterList.0=诺亚
+CharacterList.1=弥央
+CharacterList.2=优妮
+CharacterList.3=泰恩
+CharacterList.4=兰兹
+CharacterList.5=圣奈
 ClassDataGridView.RankExp=职业经验
 ClassDataGridView.Fetters=羁绊
 ClassDataGridView.RankLevel=职业等级

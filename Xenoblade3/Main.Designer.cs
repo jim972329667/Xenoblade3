@@ -35,14 +35,11 @@
             this.GoldNum = new System.Windows.Forms.NumericUpDown();
             this.GoldLabel = new System.Windows.Forms.Label();
             this.CharacterTab = new System.Windows.Forms.TabPage();
+            this.SoulPointNum = new System.Windows.Forms.NumericUpDown();
+            this.SoulPoint = new System.Windows.Forms.Label();
             this.ClassGroupBox = new System.Windows.Forms.GroupBox();
             this.ClassDataGridView = new System.Windows.Forms.DataGridView();
-            this.Arts_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arts_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arts_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skill_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skill_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skill_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.careerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CharacterClassList = new System.Windows.Forms.ListBox();
             this.CharacterClassIDNum = new System.Windows.Forms.NumericUpDown();
             this.CharacterClassID = new System.Windows.Forms.Label();
@@ -65,14 +62,30 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.Item_Ether = new System.Windows.Forms.TabPage();
             this.Item_EtherDataGridView = new System.Windows.Forms.DataGridView();
+            this.serialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Item_Gems = new System.Windows.Forms.TabPage();
             this.Item_GemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Collectibles = new System.Windows.Forms.TabPage();
             this.Item_CollectiblesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Accessories = new System.Windows.Forms.TabPage();
             this.Item_AccessoriesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Key = new System.Windows.Forms.TabPage();
             this.Item_KeyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,31 +93,22 @@
             this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rankExpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fettersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rankLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.careerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fettersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arts_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arts_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arts_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skill_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skill_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skill_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.BaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GoldNum)).BeginInit();
             this.CharacterTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoulPointNum)).BeginInit();
             this.ClassGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClassDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.careerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterClassIDNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterBounsExpNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterLvNum)).BeginInit();
@@ -115,6 +119,7 @@
             this.tabControl2.SuspendLayout();
             this.Item_Ether.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_EtherDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.Item_Gems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_GemsDataGridView)).BeginInit();
             this.Item_Collectibles.SuspendLayout();
@@ -124,8 +129,6 @@
             this.Item_Key.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_KeyDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.careerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -194,6 +197,8 @@
             // 
             // CharacterTab
             // 
+            this.CharacterTab.Controls.Add(this.SoulPointNum);
+            this.CharacterTab.Controls.Add(this.SoulPoint);
             this.CharacterTab.Controls.Add(this.ClassGroupBox);
             this.CharacterTab.Controls.Add(this.CharacterClassIDNum);
             this.CharacterTab.Controls.Add(this.CharacterClassID);
@@ -212,6 +217,32 @@
             this.CharacterTab.TabIndex = 1;
             this.CharacterTab.Text = "CharacterTab";
             this.CharacterTab.UseVisualStyleBackColor = true;
+            // 
+            // SoulPointNum
+            // 
+            this.SoulPointNum.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SoulPointNum.Location = new System.Drawing.Point(866, 83);
+            this.SoulPointNum.Margin = new System.Windows.Forms.Padding(4);
+            this.SoulPointNum.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.SoulPointNum.Name = "SoulPointNum";
+            this.SoulPointNum.Size = new System.Drawing.Size(160, 26);
+            this.SoulPointNum.TabIndex = 13;
+            this.SoulPointNum.ValueChanged += new System.EventHandler(this.SoulPointNum_ValueChanged);
+            // 
+            // SoulPoint
+            // 
+            this.SoulPoint.AutoSize = true;
+            this.SoulPoint.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SoulPoint.Location = new System.Drawing.Point(763, 88);
+            this.SoulPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SoulPoint.Name = "SoulPoint";
+            this.SoulPoint.Size = new System.Drawing.Size(95, 16);
+            this.SoulPoint.TabIndex = 12;
+            this.SoulPoint.Text = "Soul Points";
             // 
             // ClassGroupBox
             // 
@@ -235,8 +266,8 @@
             this.ClassDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClassDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rankExpDataGridViewTextBoxColumn,
-            this.fettersDataGridViewTextBoxColumn,
             this.rankLevelDataGridViewTextBoxColumn,
+            this.fettersDataGridViewTextBoxColumn,
             this.Arts_1,
             this.Arts_2,
             this.Arts_3,
@@ -252,41 +283,9 @@
             this.ClassDataGridView.Size = new System.Drawing.Size(699, 350);
             this.ClassDataGridView.TabIndex = 2;
             // 
-            // Arts_1
+            // careerBindingSource
             // 
-            this.Arts_1.DataPropertyName = "Arts_1";
-            this.Arts_1.HeaderText = "Arts_1";
-            this.Arts_1.Name = "Arts_1";
-            // 
-            // Arts_2
-            // 
-            this.Arts_2.DataPropertyName = "Arts_2";
-            this.Arts_2.HeaderText = "Arts_2";
-            this.Arts_2.Name = "Arts_2";
-            // 
-            // Arts_3
-            // 
-            this.Arts_3.DataPropertyName = "Arts_3";
-            this.Arts_3.HeaderText = "Arts_3";
-            this.Arts_3.Name = "Arts_3";
-            // 
-            // Skill_1
-            // 
-            this.Skill_1.DataPropertyName = "Skill_1";
-            this.Skill_1.HeaderText = "Skill_1";
-            this.Skill_1.Name = "Skill_1";
-            // 
-            // Skill_2
-            // 
-            this.Skill_2.DataPropertyName = "Skill_2";
-            this.Skill_2.HeaderText = "Skill_2";
-            this.Skill_2.Name = "Skill_2";
-            // 
-            // Skill_3
-            // 
-            this.Skill_3.DataPropertyName = "Skill_3";
-            this.Skill_3.HeaderText = "Skill_3";
-            this.Skill_3.Name = "Skill_3";
+            this.careerBindingSource.DataSource = typeof(Xenoblade3.Career);
             // 
             // CharacterClassList
             // 
@@ -300,7 +299,7 @@
             // 
             // CharacterClassIDNum
             // 
-            this.CharacterClassIDNum.Location = new System.Drawing.Point(807, 88);
+            this.CharacterClassIDNum.Location = new System.Drawing.Point(666, 83);
             this.CharacterClassIDNum.Margin = new System.Windows.Forms.Padding(4);
             this.CharacterClassIDNum.Maximum = new decimal(new int[] {
             64,
@@ -308,14 +307,14 @@
             0,
             0});
             this.CharacterClassIDNum.Name = "CharacterClassIDNum";
-            this.CharacterClassIDNum.Size = new System.Drawing.Size(160, 26);
+            this.CharacterClassIDNum.Size = new System.Drawing.Size(77, 26);
             this.CharacterClassIDNum.TabIndex = 10;
             this.CharacterClassIDNum.ValueChanged += new System.EventHandler(this.CharacterClassIDNum_ValueChanged);
             // 
             // CharacterClassID
             // 
             this.CharacterClassID.AutoSize = true;
-            this.CharacterClassID.Location = new System.Drawing.Point(717, 93);
+            this.CharacterClassID.Location = new System.Drawing.Point(576, 88);
             this.CharacterClassID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CharacterClassID.Name = "CharacterClassID";
             this.CharacterClassID.Size = new System.Drawing.Size(63, 16);
@@ -324,7 +323,7 @@
             // 
             // CharacterBounsExpNum
             // 
-            this.CharacterBounsExpNum.Location = new System.Drawing.Point(807, 27);
+            this.CharacterBounsExpNum.Location = new System.Drawing.Point(666, 22);
             this.CharacterBounsExpNum.Margin = new System.Windows.Forms.Padding(4);
             this.CharacterBounsExpNum.Maximum = new decimal(new int[] {
             99999999,
@@ -339,7 +338,7 @@
             // CharacterBounsExp
             // 
             this.CharacterBounsExp.AutoSize = true;
-            this.CharacterBounsExp.Location = new System.Drawing.Point(717, 32);
+            this.CharacterBounsExp.Location = new System.Drawing.Point(576, 27);
             this.CharacterBounsExp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CharacterBounsExp.Name = "CharacterBounsExp";
             this.CharacterBounsExp.Size = new System.Drawing.Size(71, 16);
@@ -557,6 +556,28 @@
             this.Item_EtherDataGridView.Size = new System.Drawing.Size(348, 498);
             this.Item_EtherDataGridView.TabIndex = 0;
             // 
+            // serialDataGridViewTextBoxColumn
+            // 
+            this.serialDataGridViewTextBoxColumn.DataPropertyName = "Serial";
+            this.serialDataGridViewTextBoxColumn.HeaderText = "Serial";
+            this.serialDataGridViewTextBoxColumn.Name = "serialDataGridViewTextBoxColumn";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(Xenoblade3.Item);
+            // 
             // Item_Gems
             // 
             this.Item_Gems.Controls.Add(this.Item_GemsDataGridView);
@@ -586,6 +607,24 @@
             this.Item_GemsDataGridView.Size = new System.Drawing.Size(348, 498);
             this.Item_GemsDataGridView.TabIndex = 1;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Serial";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Serial";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Count";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Count";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // Item_Collectibles
             // 
             this.Item_Collectibles.Controls.Add(this.Item_CollectiblesDataGridView);
@@ -613,6 +652,24 @@
             this.Item_CollectiblesDataGridView.RowTemplate.Height = 23;
             this.Item_CollectiblesDataGridView.Size = new System.Drawing.Size(348, 498);
             this.Item_CollectiblesDataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Serial";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Serial";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Count";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Count";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // Item_Accessories
             // 
@@ -642,6 +699,24 @@
             this.Item_AccessoriesDataGridView.Size = new System.Drawing.Size(348, 498);
             this.Item_AccessoriesDataGridView.TabIndex = 2;
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Serial";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Serial";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Count";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Count";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
             // Item_Key
             // 
             this.Item_Key.Controls.Add(this.Item_KeyDataGridView);
@@ -669,6 +744,24 @@
             this.Item_KeyDataGridView.RowTemplate.Height = 23;
             this.Item_KeyDataGridView.Size = new System.Drawing.Size(348, 498);
             this.Item_KeyDataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Serial";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Serial";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn11.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Count";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Count";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
             // menuStrip1
             // 
@@ -729,115 +822,53 @@
             this.rankExpDataGridViewTextBoxColumn.HeaderText = "RankExp";
             this.rankExpDataGridViewTextBoxColumn.Name = "rankExpDataGridViewTextBoxColumn";
             // 
-            // fettersDataGridViewTextBoxColumn
-            // 
-            this.fettersDataGridViewTextBoxColumn.DataPropertyName = "Fetters";
-            this.fettersDataGridViewTextBoxColumn.HeaderText = "Fetters";
-            this.fettersDataGridViewTextBoxColumn.Name = "fettersDataGridViewTextBoxColumn";
-            // 
             // rankLevelDataGridViewTextBoxColumn
             // 
             this.rankLevelDataGridViewTextBoxColumn.DataPropertyName = "RankLevel";
             this.rankLevelDataGridViewTextBoxColumn.HeaderText = "RankLevel";
             this.rankLevelDataGridViewTextBoxColumn.Name = "rankLevelDataGridViewTextBoxColumn";
             // 
-            // careerBindingSource
+            // fettersDataGridViewTextBoxColumn
             // 
-            this.careerBindingSource.DataSource = typeof(Xenoblade3.Career);
+            this.fettersDataGridViewTextBoxColumn.DataPropertyName = "Fetters";
+            this.fettersDataGridViewTextBoxColumn.HeaderText = "Fetters";
+            this.fettersDataGridViewTextBoxColumn.Name = "fettersDataGridViewTextBoxColumn";
             // 
-            // serialDataGridViewTextBoxColumn
+            // Arts_1
             // 
-            this.serialDataGridViewTextBoxColumn.DataPropertyName = "Serial";
-            this.serialDataGridViewTextBoxColumn.HeaderText = "Serial";
-            this.serialDataGridViewTextBoxColumn.Name = "serialDataGridViewTextBoxColumn";
+            this.Arts_1.DataPropertyName = "Arts_1";
+            this.Arts_1.HeaderText = "Arts_1";
+            this.Arts_1.Name = "Arts_1";
             // 
-            // iDDataGridViewTextBoxColumn
+            // Arts_2
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.Arts_2.DataPropertyName = "Arts_2";
+            this.Arts_2.HeaderText = "Arts_2";
+            this.Arts_2.Name = "Arts_2";
             // 
-            // countDataGridViewTextBoxColumn
+            // Arts_3
             // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            this.Arts_3.DataPropertyName = "Arts_3";
+            this.Arts_3.HeaderText = "Arts_3";
+            this.Arts_3.Name = "Arts_3";
             // 
-            // itemBindingSource
+            // Skill_1
             // 
-            this.itemBindingSource.DataSource = typeof(Xenoblade3.Item);
+            this.Skill_1.DataPropertyName = "Skill_1";
+            this.Skill_1.HeaderText = "Skill_1";
+            this.Skill_1.Name = "Skill_1";
             // 
-            // dataGridViewTextBoxColumn1
+            // Skill_2
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Serial";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Serial";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.Skill_2.DataPropertyName = "Skill_2";
+            this.Skill_2.HeaderText = "Skill_2";
+            this.Skill_2.Name = "Skill_2";
             // 
-            // dataGridViewTextBoxColumn2
+            // Skill_3
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Count";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Count";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Serial";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Serial";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Count";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Count";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Serial";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Serial";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn8.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Count";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Count";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Serial";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Serial";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn11.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Count";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Count";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.Skill_3.DataPropertyName = "Skill_3";
+            this.Skill_3.HeaderText = "Skill_3";
+            this.Skill_3.Name = "Skill_3";
             // 
             // Main
             // 
@@ -857,8 +888,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GoldNum)).EndInit();
             this.CharacterTab.ResumeLayout(false);
             this.CharacterTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoulPointNum)).EndInit();
             this.ClassGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ClassDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.careerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterClassIDNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterBounsExpNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterLvNum)).EndInit();
@@ -870,6 +903,7 @@
             this.tabControl2.ResumeLayout(false);
             this.Item_Ether.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Item_EtherDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.Item_Gems.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Item_GemsDataGridView)).EndInit();
             this.Item_Collectibles.ResumeLayout(false);
@@ -880,8 +914,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Item_KeyDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.careerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -921,15 +953,6 @@
         private System.Windows.Forms.ListBox CharacterClassList;
         private System.Windows.Forms.DataGridView ClassDataGridView;
         private System.Windows.Forms.BindingSource careerBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rankExpDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fettersDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rankLevelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arts_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arts_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arts_3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Skill_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Skill_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Skill_3;
         private System.Windows.Forms.DataGridView Item_EtherDataGridView;
         private System.Windows.Forms.DataGridView Item_GemsDataGridView;
         private System.Windows.Forms.DataGridView Item_CollectiblesDataGridView;
@@ -959,6 +982,17 @@
         private System.Windows.Forms.Label ItemID;
         private System.Windows.Forms.Label ItemType;
         private System.Windows.Forms.ComboBox ItemTypeComboBox;
+        private System.Windows.Forms.NumericUpDown SoulPointNum;
+        private System.Windows.Forms.Label SoulPoint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rankExpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rankLevelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fettersDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arts_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arts_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arts_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Skill_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Skill_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Skill_3;
     }
 }
 
