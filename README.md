@@ -1,3 +1,4 @@
+![DL Count](https://img.shields.io/github/downloads/jim972329667/Xenoblade3/total.svg)
 # Xenoblade3
 Switch Xenoblade 3 SaveDate Editor
 
