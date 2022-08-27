@@ -14,7 +14,7 @@ namespace Xenoblade3
 {
     public partial class Main : Form
     {
-        private Languages thislanguage = Languages.中文;
+        private Languages thislanguage = Languages.English;
         private static readonly Dictionary<Languages, TranslationContext> Context = new Dictionary<Languages, TranslationContext>();
         private XC3Save Save = null;
         private string OpenFileName = string.Empty;

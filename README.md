@@ -2,7 +2,7 @@
 # Xenoblade3
 Switch Xenoblade 3 SaveDate Editor
 
-# 如何使用？
-* 打开 bf3game00a.sav \\ bf3game01.sav \\ bf3game02.sav \\ bf3game03.sav \\ bf3game04.sav
-* 在软件中编辑完成后点击保存
-* 出现成功提示表示修改成功
+# How to use？
+* Open bf3game00a.sav \\ bf3game01.sav \\ bf3game02.sav \\ bf3game03.sav \\ bf3game04.sav
+* Open the bf3game00a.sav \bf3game01.sav \bf3game02.sav \bf3game03.sav \bf3game04.sav Click Save when the editing is complete in the software 
+* A success prompt indicates that the modification was successful

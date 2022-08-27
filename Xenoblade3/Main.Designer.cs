@@ -71,21 +71,25 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnGemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Collectibles = new System.Windows.Forms.TabPage();
             this.Item_CollectiblesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Accessories = new System.Windows.Forms.TabPage();
             this.Item_AccessoriesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnAcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Key = new System.Windows.Forms.TabPage();
             this.Item_KeyDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumnKeyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -598,13 +602,14 @@
             this.Item_GemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Item_GemsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumnGemName,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.Item_GemsDataGridView.DataSource = this.itemBindingSource;
             this.Item_GemsDataGridView.Location = new System.Drawing.Point(3, 3);
             this.Item_GemsDataGridView.Name = "Item_GemsDataGridView";
             this.Item_GemsDataGridView.RowTemplate.Height = 23;
-            this.Item_GemsDataGridView.Size = new System.Drawing.Size(348, 498);
+            this.Item_GemsDataGridView.Size = new System.Drawing.Size(520, 498);
             this.Item_GemsDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -612,18 +617,28 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Serial";
             this.dataGridViewTextBoxColumn1.HeaderText = "Serial";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn2.HeaderText = "ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Count";
             this.dataGridViewTextBoxColumn3.HeaderText = "Count";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            // 
+            // dataGridViewTextBoxColumnGemName
+            // 
+            this.dataGridViewTextBoxColumnGemName.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumnGemName.HeaderText = "Name";
+            this.dataGridViewTextBoxColumnGemName.Name = "dataGridViewTextBoxColumnGemName";
+            this.dataGridViewTextBoxColumnGemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // Item_Collectibles
             // 
@@ -643,14 +658,15 @@
             this.Item_CollectiblesDataGridView.AutoGenerateColumns = false;
             this.Item_CollectiblesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Item_CollectiblesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+                this.dataGridViewTextBoxColumn4,
+                this.dataGridViewTextBoxColumnColName,
+                this.dataGridViewTextBoxColumn5,
+                this.dataGridViewTextBoxColumn6});
             this.Item_CollectiblesDataGridView.DataSource = this.itemBindingSource;
             this.Item_CollectiblesDataGridView.Location = new System.Drawing.Point(3, 3);
             this.Item_CollectiblesDataGridView.Name = "Item_CollectiblesDataGridView";
             this.Item_CollectiblesDataGridView.RowTemplate.Height = 23;
-            this.Item_CollectiblesDataGridView.Size = new System.Drawing.Size(348, 498);
+            this.Item_CollectiblesDataGridView.Size = new System.Drawing.Size(520, 498);
             this.Item_CollectiblesDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn4
@@ -658,18 +674,28 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Serial";
             this.dataGridViewTextBoxColumn4.HeaderText = "Serial";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn5.HeaderText = "ID";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Count";
             this.dataGridViewTextBoxColumn6.HeaderText = "Count";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            // 
+            // dataGridViewTextBoxColumnColName
+            // 
+            this.dataGridViewTextBoxColumnColName.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumnColName.HeaderText = "Name";
+            this.dataGridViewTextBoxColumnColName.Name = "dataGridViewTextBoxColumnColName";
+            this.dataGridViewTextBoxColumnColName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // Item_Accessories
             // 
@@ -690,13 +716,14 @@
             this.Item_AccessoriesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Item_AccessoriesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumnAcName,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.Item_AccessoriesDataGridView.DataSource = this.itemBindingSource;
             this.Item_AccessoriesDataGridView.Location = new System.Drawing.Point(3, 3);
             this.Item_AccessoriesDataGridView.Name = "Item_AccessoriesDataGridView";
             this.Item_AccessoriesDataGridView.RowTemplate.Height = 23;
-            this.Item_AccessoriesDataGridView.Size = new System.Drawing.Size(348, 498);
+            this.Item_AccessoriesDataGridView.Size = new System.Drawing.Size(520, 498);
             this.Item_AccessoriesDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn7
@@ -704,18 +731,28 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Serial";
             this.dataGridViewTextBoxColumn7.HeaderText = "Serial";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn8.HeaderText = "ID";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Count";
             this.dataGridViewTextBoxColumn9.HeaderText = "Count";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            // 
+            // dataGridViewTextBoxColumnAcName
+            // 
+            this.dataGridViewTextBoxColumnAcName.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumnAcName.HeaderText = "Name";
+            this.dataGridViewTextBoxColumnAcName.Name = "dataGridViewTextBoxColumnAcName";
+            this.dataGridViewTextBoxColumnAcName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // Item_Key
             // 
@@ -736,13 +773,14 @@
             this.Item_KeyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Item_KeyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumnKeyName,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.Item_KeyDataGridView.DataSource = this.itemBindingSource;
             this.Item_KeyDataGridView.Location = new System.Drawing.Point(3, 3);
             this.Item_KeyDataGridView.Name = "Item_KeyDataGridView";
             this.Item_KeyDataGridView.RowTemplate.Height = 23;
-            this.Item_KeyDataGridView.Size = new System.Drawing.Size(348, 498);
+            this.Item_KeyDataGridView.Size = new System.Drawing.Size(520, 498);
             this.Item_KeyDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn10
@@ -750,18 +788,28 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Serial";
             this.dataGridViewTextBoxColumn10.HeaderText = "Serial";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn11.HeaderText = "ID";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "Count";
             this.dataGridViewTextBoxColumn12.HeaderText = "Count";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            // 
+            // dataGridViewTextBoxColumnKeyName
+            // 
+            this.dataGridViewTextBoxColumnKeyName.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumnKeyName.HeaderText = "Name";
+            this.dataGridViewTextBoxColumnKeyName.Name = "dataGridViewTextBoxColumnKeyName";
+            this.dataGridViewTextBoxColumnKeyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // menuStrip1
             // 
@@ -961,15 +1009,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnGemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnColName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnAcName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnKeyName;
         private System.Windows.Forms.BindingSource itemBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn serialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
