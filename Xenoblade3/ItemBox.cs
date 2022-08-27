@@ -25,6 +25,17 @@ namespace Xenoblade3
             }
         }
 
+        public Item()
+        {
+            ID = 0;
+            Name = string.Empty;
+            Serial = 0;
+            Type = 0;
+            Count = 0;
+            IsNew = 0;
+            GetSerial = 0;
+        }
+
         public Item(byte[] data)
         {
             if (data is null)
