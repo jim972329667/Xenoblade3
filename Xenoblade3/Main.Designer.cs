@@ -510,7 +510,7 @@
             // 
             // ExportItemButton
             // 
-            this.ExportItemButton.Location = new System.Drawing.Point(592, 355);
+            this.ExportItemButton.Location = new System.Drawing.Point(651, 355);
             this.ExportItemButton.Name = "ExportItemButton";
             this.ExportItemButton.Size = new System.Drawing.Size(101, 39);
             this.ExportItemButton.TabIndex = 13;
