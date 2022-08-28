@@ -413,9 +413,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, gemNames);
                         return;
                     }
                 }
@@ -434,9 +432,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, collectiblesNames);
                         return;
                     }
                 }
@@ -476,9 +472,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, accessoriesNames);
                         return;
                     }
                 }
@@ -497,9 +491,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, keyItemsNames);
                         return;
                     }
                 }
@@ -508,6 +500,14 @@ namespace Xenoblade3
             {
                 return;
             }
+        }
+
+        private void CreateItem(Item item, ushort id, ushort count, Dictionary<ushort, string> dict)
+        {
+            item.Name = this.GetNameByID(id, dict);
+            item.ID = id;
+            item.Count = count;
+            item.IsNew = 5;
         }
         public void RemoveItem(UInt16 ID)
         {
@@ -609,6 +609,32 @@ namespace Xenoblade3
                     result.AddRange(item.ToRawData());
             }
             return result.ToArray();
+        }
+
+        public void AddAllCollectibles(ushort number)
+        {
+            foreach(var item in collectiblesNames)
+            {
+                // Skip the following IDs because they break quests.
+                if(item.Key == 2152)
+                {
+                    continue;
+                }
+
+                //Only add items that are not blank.
+                if(!item.Value.Contains("[blank]"))
+                    this.AddItem(item.Key, 3, number);
+            }
+        }
+
+        public void AddAllAccessories(ushort number)
+        {
+            foreach(var item in accessoriesNames)
+            {
+                //Only add items that are not blank.
+                if (!item.Value.Contains("[blank]"))
+                    this.AddItem(item.Key, 5, number);
+            }
         }
     }
 }

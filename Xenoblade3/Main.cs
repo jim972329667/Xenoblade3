@@ -116,6 +116,7 @@ namespace Xenoblade3
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ofdSaveFile.Filter = "Save file|*.sav";
             DialogResult = ofdSaveFile.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
@@ -265,6 +266,7 @@ namespace Xenoblade3
         private void ImportItemButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "JSON file|*.json";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -385,6 +387,20 @@ namespace Xenoblade3
             }
         }
 
-        
+        private void AddCollectiblesButton_Click(object sender, EventArgs e)
+        {
+            if (Save == null)
+                return;
+
+            Save.ItemBox.AddAllCollectibles(99);
+        }
+
+        private void AddAccessoriesButton_Click(object sender, EventArgs e)
+        {
+            if (Save == null)
+                return;
+
+            Save.ItemBox.AddAllAccessories(20);
+        }
     }
 }
