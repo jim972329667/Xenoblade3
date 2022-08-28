@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace Xenoblade3
     {
         public const int SIZE = 0x10;
         public UInt16 ID { get; set; }
+        public string Name { get; set; }
         public UInt16 Serial { get; set; }
         public UInt32 Type { get; set; }
         public UInt32 GetSerial { get; set; }
@@ -21,6 +23,17 @@ namespace Xenoblade3
             { 
                 this.Delete();
             }
+        }
+
+        public Item()
+        {
+            ID = 0;
+            Name = string.Empty;
+            Serial = 0;
+            Type = 0;
+            Count = 0;
+            IsNew = 0;
+            GetSerial = 0;
         }
 
         public Item(byte[] data)
@@ -100,8 +113,20 @@ namespace Xenoblade3
         public Item[] Item_Accessories { get; set; }
         public Item[] Item_Key { get; set; }
         public bool HasEther { get; set; } = false;
+
+        public Dictionary<UInt16,string> collectiblesNames { get; set; }
+        public Dictionary<UInt16, string> keyItemsNames { get; set; }
+        public Dictionary<UInt16, string> accessoriesNames { get; set; }
+        public Dictionary<UInt16, string> gemNames { get; set; }
+
         public ItemBox(byte[] data)
         {
+            //Fill item name dictionaries.
+            this.FillCollectiblesDict();
+            this.FillAccessoriesDict();
+            this.FillKeyitemsDict();
+            this.FillGemDict();
+
             Item_GetCount = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Item_GetCount"], 4), 0);
             Unknow = data.GetByteSubArray(LOC["Unknow"], 0x24);
             Item_Ether = new Item[0x10];
@@ -116,11 +141,19 @@ namespace Xenoblade3
 
             Item_Gems = new Item[0x12C];
             for (int i = 0; i < Item_Gems.Length; i++)
+            {
                 Item_Gems[i] = new Item(data.GetByteSubArray(LOC["Item_Gems"] + (i * Item.SIZE), Item.SIZE));
+                Item_Gems[i].Name = this.GetNameByID(Item_Gems[i].ID, gemNames);
+            }
+
 
             Item_Collectibles = new Item[0x5DC];
             for (int i = 0; i < Item_Collectibles.Length; i++)
+            {
                 Item_Collectibles[i] = new Item(data.GetByteSubArray(LOC["Item_Collectibles"] + (i * Item.SIZE), Item.SIZE));
+                Item_Collectibles[i].Name = this.GetNameByID(Item_Collectibles[i].ID, collectiblesNames);
+            }
+                
 
             Item_Unknow = new Item[0x320];
             for (int i = 0; i < Item_Unknow.Length; i++)
@@ -128,12 +161,76 @@ namespace Xenoblade3
 
             Item_Accessories = new Item[0x5DC];
             for (int i = 0; i < Item_Accessories.Length; i++)
+            {
                 Item_Accessories[i] = new Item(data.GetByteSubArray(LOC["Item_Accessories"] + (i * Item.SIZE), Item.SIZE));
+                Item_Accessories[i].Name = this.GetNameByID(Item_Accessories[i].ID, accessoriesNames);
+            }
 
             Item_Key = new Item[0x118];
             for (int i = 0; i < Item_Key.Length; i++)
+            {
                 Item_Key[i] = new Item(data.GetByteSubArray(LOC["Item_Key"] + (i * Item.SIZE), Item.SIZE));
+                Item_Key[i].Name = this.GetNameByID(Item_Key[i].ID, keyItemsNames);
+            }
+                
         }
+
+        public void FillCollectiblesDict()
+        {
+            collectiblesNames = new Dictionary<UInt16, string>();
+
+            foreach (var line in File.ReadLines(@"Resources/Items/collectibles.txt").Skip(1))
+            {
+                var tempLine = line.Split('\t');
+
+                collectiblesNames.Add(UInt16.Parse(tempLine[0]), tempLine[1]);
+            }            
+        }
+
+        public void FillAccessoriesDict()
+        {
+            accessoriesNames = new Dictionary<UInt16, string>();
+
+            foreach (var line in File.ReadLines(@"Resources/Items/accessories.txt").Skip(1))
+            {
+                var tempLine = line.Split('\t');
+
+                accessoriesNames.Add(UInt16.Parse(tempLine[0]), tempLine[1]);
+            }
+        }
+
+        public void FillGemDict()
+        {
+            gemNames = new Dictionary<UInt16, string>();
+
+            foreach (var line in File.ReadLines(@"Resources/Items/gems.txt").Skip(1))
+            {
+                var tempLine = line.Split('\t');
+
+                gemNames.Add(UInt16.Parse(tempLine[0]), tempLine[1]);
+            }
+        }
+
+        public void FillKeyitemsDict()
+        {
+            keyItemsNames = new Dictionary<UInt16, string>();
+
+            foreach (var line in File.ReadLines(@"Resources/Items/keyItems.txt").Skip(1))
+            {
+                var tempLine = line.Split('\t');
+
+                keyItemsNames.Add(UInt16.Parse(tempLine[0]), tempLine[1]);
+            }
+        }
+
+        public string GetNameByID(UInt32 ID, Dictionary<UInt16, string> dict)
+        {
+            string name;
+            if (dict.TryGetValue((ushort)ID, out name))
+                return name;
+            return String.Empty;
+        }
+
         public void FixSerial()
         {
             UInt32 GetSerial = 0;
@@ -316,9 +413,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, gemNames);
                         return;
                     }
                 }
@@ -337,9 +432,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, collectiblesNames);
                         return;
                     }
                 }
@@ -379,9 +472,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, accessoriesNames);
                         return;
                     }
                 }
@@ -400,9 +491,7 @@ namespace Xenoblade3
                 {
                     if (item.ID == 0)
                     {
-                        item.ID = ID;
-                        item.Count = Count;
-                        item.IsNew = 5;
+                        this.CreateItem(item, ID, Count, keyItemsNames);
                         return;
                     }
                 }
@@ -411,6 +500,14 @@ namespace Xenoblade3
             {
                 return;
             }
+        }
+
+        private void CreateItem(Item item, ushort id, ushort count, Dictionary<ushort, string> dict)
+        {
+            item.Name = this.GetNameByID(id, dict);
+            item.ID = id;
+            item.Count = count;
+            item.IsNew = 5;
         }
         public void RemoveItem(UInt16 ID)
         {
@@ -512,6 +609,32 @@ namespace Xenoblade3
                     result.AddRange(item.ToRawData());
             }
             return result.ToArray();
+        }
+
+        public void AddAllCollectibles(ushort number)
+        {
+            foreach(var item in collectiblesNames)
+            {
+                // Skip the following IDs because they break quests.
+                if(item.Key == 2152)
+                {
+                    continue;
+                }
+
+                //Only add items that are not blank.
+                if(!item.Value.Contains("[blank]"))
+                    this.AddItem(item.Key, 3, number);
+            }
+        }
+
+        public void AddAllAccessories(ushort number)
+        {
+            foreach(var item in accessoriesNames)
+            {
+                //Only add items that are not blank.
+                if (!item.Value.Contains("[blank]"))
+                    this.AddItem(item.Key, 5, number);
+            }
         }
     }
 }

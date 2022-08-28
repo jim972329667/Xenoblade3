@@ -1,0 +1,128 @@
+#ID	Name	
+16000	[blank]
+16001	Origin Metal
+16002	Origin Metal
+16003	Origin Metal
+16004	Origin Metal
+16005	Luscious Fillet
+16006	Ship Ether Cylinders
+16007	Ship Ether Cylinders
+16008	Ship Ether Cylinders
+16009	Ship Ether Cylinders
+16010	Giant Feris Horns
+16011	Wheelideeli's Abacus
+16012	Broken Instrument
+16013	No. 9's Instrument
+16014	Metessia Resin
+16015	Seven-Hue Seashell
+16016	Grubby Painting
+16017	Rich Serprond Collar-Cut
+16018	Point Card
+16019	Point Sticker
+16020	Armu Psychology
+16021	Ardun Psychology
+16022	Clammoth
+16023	Coralie's Ring
+16024	Beat-Up Shoe
+16025	Broken Pendant
+16026	Goods for the City
+16027	Irma's Key
+16028	Tempapa's Memo
+16029	Samon's Thing
+16030	Springroot
+16031	Levnis Endoskeleton
+16032	Levnis Self-Charger
+16033	Levnis Auxiliary CPU
+16034	Zuo's Belongings
+16035	Yew's Belongings
+16036	Heewa's Belongings
+16037	Snow-White Mythrice
+16038	Onigiri
+16039	Yum-Yum Coconut
+16040	Ancient Taos Fossil
+16041	Millennial Tree Amber
+16042	Twineturf
+16043	Levnis Drivetrain Part
+16044	Keen Beak
+16045	Bewitching Thread
+16046	Graceful Pelt
+16047	Photonic Condenser
+16048	[blank]
+16049	Fermenting Bug Juices
+16050	Manana's Nibblekibble
+16051	Sage Shroom
+16052	Medical Supplies
+16053	Emetater from Kite
+16054	Url's Special Fertilizer
+16055	Boxy's Soyprimo Sauce
+16056	Levnis Lamellar Armor
+16057	Kevesi Infantry Exosuit
+16058	Rations
+16059	Abandoned Resources
+16060	Consolation Prize
+16061	Mysterious Keycard
+16062	Stavepetal
+16063	Titanic Bee Hive
+16064	Sodie Stone
+16065	Extra Provisions
+16066	Harvest Day Tiara
+16067	Cross-Stamped Box
+16068	Torpedo Wrap
+16069	Sack of Dark Grapes
+16070	Jeweled Pebble
+16071	Leathery Wing Fossil
+16072	Rusted Pressure Helm
+16073	Sinister Faceplate
+16074	Shiny Hexagonal Chip
+16075	Grimy Identification
+16076	Founders' Tale, Latest Vol.
+16077	Medica Pippito Claw
+16078	Fortifying Gold Soup
+16079	[blank]
+16080	[blank]
+16081	[blank]
+16082	[blank]
+16083	Round Origin Shard
+16084	Toroidal Origin Shard
+16085	Trigonal Origin Shard
+16086	Hexagonal Origin Shard
+16087	Square Origin Shard
+16088	Rectangular Origin Shard
+16089	Rhomboid Origin Shard
+16090	Nopon Coin (Gold)
+16091	Nopon Coin (Silver)
+16092	Ultimate Hammer
+16093	Red Nopon Pebble
+16094	Yellow Nopon Pebble
+16095	Blue Nopon Pebble
+16096	Roccodori Root
+16097	Sophora's Leaf
+16098	Thank-You Card
+16099	Homecomers' Key
+16100	Seven Shards
+16101	Secret Storage Key
+16102	Gemcrafting 101
+16103	Fine Attack Gems
+16104	Fine Defense Gems
+16105	Fine Healing Gems
+16106	Fine Assorted Gems
+16107	Adept Attack Gems
+16108	Adept Defense Gems
+16109	Adept Healing Gems
+16110	Adept Assorted Gems
+16111	Master Attack Gems
+16112	Master Defense Gems
+16113	Master Healing Gems
+16114	Master Assorted Gems
+16115	Elder Attack Gems
+16116	Elder Defense Gems
+16117	Elder Healing Gems
+16118	Elder Assorted Gems
+16119	The Art of Flow
+16120	Levnite for Export
+16121	K's Portrait
+16122	South Gate Key
+16123	North Gate Key
+16124	Front Gate Key
+16125	Relay Base Key
+16126	Bright Fig

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.TabControl;
@@ -14,7 +15,7 @@ namespace Xenoblade3
 {
     public partial class Main : Form
     {
-        private Languages thislanguage = Languages.中文;
+        private Languages thislanguage = Languages.English;
         private static readonly Dictionary<Languages, TranslationContext> Context = new Dictionary<Languages, TranslationContext>();
         private XC3Save Save = null;
         private string OpenFileName = string.Empty;
@@ -115,6 +116,7 @@ namespace Xenoblade3
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ofdSaveFile.Filter = "Save file|*.sav";
             DialogResult = ofdSaveFile.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
@@ -207,6 +209,101 @@ namespace Xenoblade3
             }
         }
 
+        private void ExportItemButton_Click(object sender, EventArgs e)
+        {
+            string strJson = string.Empty;
+            var opt = new JsonSerializerOptions() { WriteIndented = true };
+            Item[] items = new Item[0];
+            string fileName = string.Empty;
+
+            //Ether
+            if (tabControl2.SelectedIndex == 0)
+            {
+                fileName = "ether";
+                items = (Item[])Item_EtherDataGridView.DataSource;
+            }
+            //Gems
+            else if (tabControl2.SelectedIndex == 1)
+            {
+                fileName = "gems";
+                items = (Item[])Item_GemsDataGridView.DataSource;
+            }
+            //Collectibles
+            else if (tabControl2.SelectedIndex == 2)
+            {
+                fileName = "collectibles";
+                items = (Item[])Item_CollectiblesDataGridView.DataSource;
+            }
+            //Accessories
+            else if (tabControl2.SelectedIndex == 3)
+            {
+                fileName = "accessories";
+                items = (Item[])Item_AccessoriesDataGridView.DataSource;
+            }
+            //Keyitems
+            else if (tabControl2.SelectedIndex == 4)
+            {
+                fileName = "keyItems";
+                items = (Item[])Item_KeyDataGridView.DataSource;                
+                
+            }
+
+            byte[] utf8bytesJson = JsonSerializer.SerializeToUtf8Bytes<Item[]>(items, opt);
+            string strResult = System.Text.Encoding.UTF8.GetString(utf8bytesJson);
+                        
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "JSON file|*.json";
+            saveFileDialog1.Title = "Save an Item File";
+            saveFileDialog1.FileName = fileName;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string file = saveFileDialog1.FileName;
+                File.WriteAllText(file, strResult);
+            }
+        }
+
+        private void ImportItemButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "JSON file|*.json";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string file = openFileDialog.FileName;
+                string strResult = File.ReadAllText(file);
+
+                var opt = new JsonSerializerOptions() { WriteIndented = true };
+                Item[] items = JsonSerializer.Deserialize<Item[]>(strResult, opt);
+
+                //Ether
+                if (tabControl2.SelectedIndex == 0)
+                {
+                    Item_EtherDataGridView.DataSource = items;
+                }
+                //Gems
+                else if (tabControl2.SelectedIndex == 1)
+                {
+                    Item_GemsDataGridView.DataSource = items;
+                }
+                //Collectibles
+                else if (tabControl2.SelectedIndex == 2)
+                {
+                    Item_CollectiblesDataGridView.DataSource = items;
+                }
+                //Accessories
+                else if (tabControl2.SelectedIndex == 3)
+                {
+                    Item_AccessoriesDataGridView.DataSource = items;
+                }
+                //Keyitems
+                else if (tabControl2.SelectedIndex == 4)
+                {
+                    Item_KeyDataGridView.DataSource = items;
+                }
+            }
+        }
+
         private void DeleteItemButton_Click(object sender, EventArgs e)
         {
             if(tabControl2.SelectedIndex == 0)
@@ -288,6 +385,22 @@ namespace Xenoblade3
             {
                 Save.Souls[index].SoulCount = (uint)SoulPointNum.Value;
             }
+        }
+
+        private void AddCollectiblesButton_Click(object sender, EventArgs e)
+        {
+            if (Save == null)
+                return;
+
+            Save.ItemBox.AddAllCollectibles(99);
+        }
+
+        private void AddAccessoriesButton_Click(object sender, EventArgs e)
+        {
+            if (Save == null)
+                return;
+
+            Save.ItemBox.AddAllAccessories(20);
         }
     }
 }

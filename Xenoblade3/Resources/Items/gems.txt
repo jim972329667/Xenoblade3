@@ -1,0 +1,201 @@
+#ID	Name
+12001	Ironclad I
+12002	Ironclad II
+12003	Ironclad III
+12004	Ironclad IV
+12005	Ironclad V
+12006	Ironclad VI
+12007	Ironclad VII
+12008	Ironclad VIII
+12009	Ironclad IX
+12010	Ironclad X
+12011	Steady Striker I
+12012	Steady Striker II
+12013	Steady Striker III
+12014	Steady Striker IV
+12015	Steady Striker V
+12016	Steady Striker VI
+12017	Steady Striker VII
+12018	Steady Striker VIII
+12019	Steady Striker IX
+12020	Steady Striker X
+12021	Doublestrike I
+12022	Doublestrike II
+12023	Doublestrike III
+12024	Doublestrike IV
+12025	Doublestrike V
+12026	Doublestrike VI
+12027	Doublestrike VII
+12028	Doublestrike VIII
+12029	Doublestrike IX
+12030	Doublestrike X
+12031	Empowered Combo I
+12032	Empowered Combo II
+12033	Empowered Combo III
+12034	Empowered Combo IV
+12035	Empowered Combo V
+12036	Empowered Combo VI
+12037	Empowered Combo VII
+12038	Empowered Combo VIII
+12039	Empowered Combo IX
+12040	Empowered Combo X
+12041	Disperse Bloodlust I
+12042	Disperse Bloodlust II
+12043	Disperse Bloodlust III
+12044	Disperse Bloodlust IV
+12045	Disperse Bloodlust V
+12046	Disperse Bloodlust VI
+12047	Disperse Bloodlust VII
+12048	Disperse Bloodlust VIII
+12049	Disperse Bloodlust IX
+12050	Disperse Bloodlust X
+12051	Steelcleaver I
+12052	Steelcleaver II
+12053	Steelcleaver III
+12054	Steelcleaver IV
+12055	Steelcleaver V
+12056	Steelcleaver VI
+12057	Steelcleaver VII
+12058	Steelcleaver VIII
+12059	Steelcleaver IX
+12060	Steelcleaver X
+12061	Accurate Grace I
+12062	Accurate Grace II
+12063	Accurate Grace III
+12064	Accurate Grace IV
+12065	Accurate Grace V
+12066	Accurate Grace VI
+12067	Accurate Grace VII
+12068	Accurate Grace VIII
+12069	Accurate Grace IX
+12070	Accurate Grace X
+12071	Analyze Weakness I
+12072	Analyze Weakness II
+12073	Analyze Weakness III
+12074	Analyze Weakness IV
+12075	Analyze Weakness V
+12076	Analyze Weakness VI
+12077	Analyze Weakness VII
+12078	Analyze Weakness VIII
+12079	Analyze Weakness IX
+12080	Analyze Weakness X
+12081	Swelling Scourge I
+12082	Swelling Scourge II
+12083	Swelling Scourge III
+12084	Swelling Scourge IV
+12085	Swelling Scourge V
+12086	Swelling Scourge VI
+12087	Swelling Scourge VII
+12088	Swelling Scourge VIII
+12089	Swelling Scourge IX
+12090	Swelling Scourge X
+12091	Refined Incantation I
+12092	Refined Incantation II
+12093	Refined Incantation III
+12094	Refined Incantation IV
+12095	Refined Incantation V
+12096	Refined Incantation VI
+12097	Refined Incantation VII
+12098	Refined Incantation VIII
+12099	Refined Incantation IX
+12100	Refined Incantation X
+12101	Tailwind I
+12102	Tailwind II
+12103	Tailwind III
+12104	Tailwind IV
+12105	Tailwind V
+12106	Tailwind VI
+12107	Tailwind VII
+12108	Tailwind VIII
+12109	Tailwind IX
+12110	Tailwind X
+12111	Steel Protection I
+12112	Steel Protection II
+12113	Steel Protection III
+12114	Steel Protection IV
+12115	Steel Protection V
+12116	Steel Protection VI
+12117	Steel Protection VII
+12118	Steel Protection VIII
+12119	Steel Protection IX
+12120	Steel Protection X
+12121	Ultimate Counter I
+12122	Ultimate Counter II
+12123	Ultimate Counter III
+12124	Ultimate Counter IV
+12125	Ultimate Counter V
+12126	Ultimate Counter VI
+12127	Ultimate Counter VII
+12128	Ultimate Counter VIII
+12129	Ultimate Counter IX
+12130	Ultimate Counter X
+12131	Brimming Spirit I
+12132	Brimming Spirit II
+12133	Brimming Spirit III
+12134	Brimming Spirit IV
+12135	Brimming Spirit V
+12136	Brimming Spirit VI
+12137	Brimming Spirit VII
+12138	Brimming Spirit VIII
+12139	Brimming Spirit IX
+12140	Brimming Spirit X
+12141	Perilous Presence I
+12142	Perilous Presence II
+12143	Perilous Presence III
+12144	Perilous Presence IV
+12145	Perilous Presence V
+12146	Perilous Presence VI
+12147	Perilous Presence VII
+12148	Perilous Presence VIII
+12149	Perilous Presence IX
+12150	Perilous Presence X
+12151	Lifebearer I
+12152	Lifebearer II
+12153	Lifebearer III
+12154	Lifebearer IV
+12155	Lifebearer V
+12156	Lifebearer VI
+12157	Lifebearer VII
+12158	Lifebearer VIII
+12159	Lifebearer IX
+12160	Lifebearer X
+12161	Soothing Breath I
+12162	Soothing Breath II
+12163	Soothing Breath III
+12164	Soothing Breath IV
+12165	Soothing Breath V
+12166	Soothing Breath VI
+12167	Soothing Breath VII
+12168	Soothing Breath VIII
+12169	Soothing Breath IX
+12170	Soothing Breath X
+12171	Lifesaving Expertise I
+12172	Lifesaving Expertise II
+12173	Lifesaving Expertise III
+12174	Lifesaving Expertise IV
+12175	Lifesaving Expertise V
+12176	Lifesaving Expertise VI
+12177	Lifesaving Expertise VII
+12178	Lifesaving Expertise VIII
+12179	Lifesaving Expertise IX
+12180	Lifesaving Expertise X
+12181	Swelling Blessing I
+12182	Swelling Blessing II
+12183	Swelling Blessing III
+12184	Swelling Blessing IV
+12185	Swelling Blessing V
+12186	Swelling Blessing VI
+12187	Swelling Blessing VII
+12188	Swelling Blessing VIII
+12189	Swelling Blessing IX
+12190	Swelling Blessing X
+12191	Refined Blessing I
+12192	Refined Blessing II
+12193	Refined Blessing III
+12194	Refined Blessing IV
+12195	Refined Blessing V
+12196	Refined Blessing VI
+12197	Refined Blessing VII
+12198	Refined Blessing VIII
+12199	Refined Blessing IX
+12200	Refined Blessing X
