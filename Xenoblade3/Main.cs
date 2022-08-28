@@ -15,7 +15,7 @@ namespace Xenoblade3
 {
     public partial class Main : Form
     {
-        private Languages thislanguage = Languages.English;
+        private Languages thislanguage = Languages.中文;
         private static readonly Dictionary<Languages, TranslationContext> Context = new Dictionary<Languages, TranslationContext>();
         private XC3Save Save = null;
         private string OpenFileName = string.Empty;
@@ -23,14 +23,15 @@ namespace Xenoblade3
         public Main()
         {
             InitializeComponent();
+            thislanguage = (Languages)Enum.Parse(typeof(Languages), Properties.Settings.Default.thisLanguage);
             ChangeLanguage(thislanguage);
         }
 
         #region Language
         public enum Languages
         {
-            中文,
             English,
+            中文,
         }
         public static TranslationContext GetContext(Languages lang)
         {
@@ -49,6 +50,10 @@ namespace Xenoblade3
         private void ChangeLanguage(Languages language)
         {
             var context = GetContext(language);
+            if(Save != null)
+                Save.ItemBox.SelectLanguage = (int)thislanguage;
+            Properties.Settings.Default.thisLanguage = language.ToString();
+            Properties.Settings.Default.Save();
             LanguageUtil.TranslateInterface(this, context);
             foreach(DataGridViewTextBoxColumn column in ClassDataGridView.Columns)
             {
@@ -106,8 +111,11 @@ namespace Xenoblade3
                 Save.Characters[i].Name = context.GetTranslatedText($"CharacterList.{i}", "Unknow");
                 CharacterList.Items.Add(Save.Characters[i]);
             }
+            Save.ItemBox.SelectLanguage = (int)thislanguage;
             CharacterList.DisplayMember = "Name";
 
+
+            var xx = Save.ItemBox.Item_Accessories.OrderBy(x => x.Name);
             Item_EtherDataGridView.DataSource = Save.ItemBox.Item_Ether;
             Item_GemsDataGridView.DataSource = Save.ItemBox.Item_Gems;
             Item_CollectiblesDataGridView.DataSource = Save.ItemBox.Item_Collectibles;
@@ -401,6 +409,22 @@ namespace Xenoblade3
                 return;
 
             Save.ItemBox.AddAllAccessories(20);
+        }
+
+        private void ItemDataGridView_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridView data = (DataGridView)sender;
+            Item[] items = data.DataSource as Item[];
+            
+
+            if(e.ColumnIndex == 0)
+                items = items.OrderBy(x => x.ID == 0).ThenBy(x => x.Serial).ToArray();
+            else if(e.ColumnIndex == 1)
+                items = items.OrderBy(x => x.ID == 0).ThenBy(x => x.ID).ToArray();
+
+
+
+            data.DataSource = items;
         }
     }
 }

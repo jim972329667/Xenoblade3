@@ -23,6 +23,11 @@ Main.AddItemButton=添加物品
 Main.DeleteItemButton=删除物品
 Main.ItemType=物品类型
 Main.SoulPoint=灵魂点数
+Main.AddCollectiblesButton=添加所有收藏品(99)
+Main.AddAccessoriesButton=添加所有饰品(20)
+Main.ExportItemButton=导出物品
+Main.ImportItemButton=导入物品
+
 
 CharacterList.0=诺亚
 CharacterList.1=弥央

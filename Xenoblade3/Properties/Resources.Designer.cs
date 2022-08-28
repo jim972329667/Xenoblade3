@@ -61,13 +61,24 @@ namespace Xenoblade3.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Main.openToolStripMenuItem=Open
+        ///   查找类似 Main=Xenoblade 3 SaveData Editor
+        ///Main.openToolStripMenuItem=Open
         ///Main.saveToolStripMenuItem=Save
         ///Main.languageToolStripMenuItem=Language
         ///Main.BaseTab=BaseTab
         ///Main.CharacterTab=CharacterTab
         ///Main.ItemTab=ItemTab
-        ///Main.GoldLabel=Gold 的本地化字符串。
+        ///Main.GoldLabel=Gold
+        ///Main.IsCompletedCheckBox=IsCompleted
+        ///Main.Item_Ether=Ether
+        ///Main.Item_Gems=Gems
+        ///Main.Item_Collectibles=Collectibles
+        ///Main.Item_Accessories=Accessories
+        ///Main.Item_Key=Key Items
+        ///Main.CharacterExp=Exp
+        ///Main.CharacterLv=Lv
+        ///Main.CharacterBounsExp=Bouns Exp
+        ///Main.CharacterCla [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string English {
             get {
@@ -76,13 +87,28 @@ namespace Xenoblade3.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Main.openToolStripMenuItem=打开
+        ///   查找类似 Main=异度神剑3存档修改器
+        ///Main.openToolStripMenuItem=打开
         ///Main.saveToolStripMenuItem=保存
         ///Main.languageToolStripMenuItem=语言
         ///Main.BaseTab=基础修改
         ///Main.CharacterTab=人物修改
         ///Main.ItemTab=物品修改
-        ///Main.GoldLabel=金钱 的本地化字符串。
+        ///Main.GoldLabel=金钱
+        ///Main.IsCompletedCheckBox=已通关
+        ///Main.Item_Ether=以太
+        ///Main.Item_Gems=宝珠
+        ///Main.Item_Collectibles=收藏品
+        ///Main.Item_Accessories=饰品
+        ///Main.Item_Key=贵重物品
+        ///Main.CharacterExp=Exp
+        ///Main.CharacterLv=Lv
+        ///Main.CharacterBounsExp=奖励经验
+        ///Main.CharacterClassID=当前职业
+        ///Main.ClassGroupBox=职业
+        ///Main.ItemID=物品ID
+        ///Main.ItemCount=物品数量
+        ///Main.AddIte [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string 中文 {
             get {

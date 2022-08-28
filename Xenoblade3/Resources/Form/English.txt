@@ -23,6 +23,11 @@ Main.AddItemButton=AddItem
 Main.DeleteItemButton=DeleteItem
 Main.ItemType=Type
 Main.SoulPoint=Soul Points
+Main.AddCollectiblesButton=Add 99 of all collectibles
+Main.AddAccessoriesButton=Add 20 of all accessories
+Main.ExportItemButton=ExportItem
+Main.ImportItemButton=ImportItem
+
 
 CharacterList.0=Noah
 CharacterList.1=Mio
