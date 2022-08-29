@@ -103,9 +103,7 @@ namespace Xenoblade3
         {
             var context = GetContext(thislanguage);
 
-            if(Save.Money > GoldNum.Maximum)
-                GoldNum.Maximum = Save.Money;
-            GoldNum.Value = Save.Money;
+            TryGetNumericUpDownValue(GoldNum, Save.Money);
             IsCompletedCheckBox.Checked = new Flag(Save.Complete[0]).flags[7];
 
             CharacterList.Items.Clear();
@@ -173,15 +171,21 @@ namespace Xenoblade3
             int index = CharacterList.SelectedIndex;
             if (index != -1)
             {
-                CharacterExpNum.Value = Save.Characters[index].Exp;
-                CharacterBounsExpNum.Value = Save.Characters[index].BounsExp;
-                CharacterLvNum.Value = Save.Characters[index].Level;
-                CharacterClassIDNum.Value = Save.Characters[index].ID;
+                TryGetNumericUpDownValue(CharacterExpNum, Save.Characters[index].Exp);
+                TryGetNumericUpDownValue(CharacterBounsExpNum, Save.Characters[index].BounsExp);
+                TryGetNumericUpDownValue(CharacterLvNum, Save.Characters[index].Level);
+                TryGetNumericUpDownValue(CharacterClassIDNum, Save.Characters[index].ID);
+                TryGetNumericUpDownValue(SoulPointNum, Save.Souls[index].SoulCount);
+
                 ClassDataGridView.DataSource = Save.Characters[index].Careers;
-                SoulPointNum.Value = Save.Souls[index].SoulCount;
             }
         }
-
+        private void TryGetNumericUpDownValue(NumericUpDown numericUpDown,uint value)
+        {
+            if(numericUpDown.Maximum < value)
+                numericUpDown.Maximum = value;
+            numericUpDown.Value = value;
+        }
         private void CharacterExpNum_ValueChanged(object sender, EventArgs e)
         {
             Character character = CharacterList.SelectedItem as Character;
