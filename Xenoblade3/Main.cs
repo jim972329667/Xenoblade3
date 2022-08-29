@@ -102,6 +102,9 @@ namespace Xenoblade3
         private void LoadSave()
         {
             var context = GetContext(thislanguage);
+
+            if(Save.Money > GoldNum.Maximum)
+                GoldNum.Maximum = Save.Money;
             GoldNum.Value = Save.Money;
             IsCompletedCheckBox.Checked = new Flag(Save.Complete[0]).flags[7];
 
@@ -114,8 +117,6 @@ namespace Xenoblade3
             Save.ItemBox.SelectLanguage = (int)thislanguage;
             CharacterList.DisplayMember = "Name";
 
-
-            var xx = Save.ItemBox.Item_Accessories.OrderBy(x => x.Name);
             Item_EtherDataGridView.DataSource = Save.ItemBox.Item_Ether;
             Item_GemsDataGridView.DataSource = Save.ItemBox.Item_Gems;
             Item_CollectiblesDataGridView.DataSource = Save.ItemBox.Item_Collectibles;
