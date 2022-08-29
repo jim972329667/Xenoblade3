@@ -671,7 +671,7 @@ namespace Xenoblade3
                 }
 
                 //Only add items that are not blank.
-                if(!item.Value.Contains("[blank]"))
+                if(!item.Value.Contains("[blank]") && !item.Value[0].Contains("[blank]"))
                     this.AddItem(item.Key, 3, number);
             }
         }
@@ -681,7 +681,7 @@ namespace Xenoblade3
             foreach(var item in accessoriesNames)
             {
                 //Only add items that are not blank.
-                if (!item.Value.Contains("[blank]"))
+                if (!item.Value.Contains("[blank]") && !item.Value[0].Contains("[blank]"))
                     this.AddItem(item.Key, 5, number);
             }
         }
