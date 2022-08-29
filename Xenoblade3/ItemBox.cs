@@ -104,6 +104,7 @@ namespace Xenoblade3
             GetSerial = 0;
             Count = 0;
             IsNew = 0;
+            Names = null;
         }
     }
     public class ItemBox

@@ -426,8 +426,8 @@ namespace Xenoblade3
                 items = items.OrderBy(x => x.ID == 0).ThenBy(x => x.Serial).ToArray();
             else if(e.ColumnIndex == 1)
                 items = items.OrderBy(x => x.ID == 0).ThenBy(x => x.ID).ToArray();
-
-
+            else if(e.ColumnIndex == 2)
+                items = items.OrderBy(x => x.ID == 0).ThenBy(x => x.Name).ToArray();
 
             data.DataSource = items;
         }
