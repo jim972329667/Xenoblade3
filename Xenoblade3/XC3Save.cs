@@ -96,11 +96,18 @@ namespace Xenoblade3
         private List<uint> GetGemsList()
         {
             List<uint> list = new List<uint>();
-            foreach (var gem in ItemBox.Item_Gems)
+            for(int i=0; i < ItemBox.Item_Gems.Length; i++)
             {
-                if(gem.ID != 0)
+                if (ItemBox.Item_Gems[i].ID != 0)
                 {
-                    list.Add((uint) gem.ID);
+                    if (list.Contains(ItemBox.Item_Gems[i].ID))
+                    {
+                        ItemBox.Item_Gems[i].Delete();
+                    }
+                    else
+                    {
+                        list.Add(ItemBox.Item_Gems[i].ID);
+                    }
                 }
             }
             list.Sort();
@@ -113,7 +120,8 @@ namespace Xenoblade3
             {
                 if(list[i] < end)
                 {
-                    value = (ushort)list[i];
+                    if(value < list[i])
+                        value = (ushort)list[i];
                 }
                 else if(list[i] == end)
                 {
