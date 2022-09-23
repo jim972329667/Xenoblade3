@@ -109,7 +109,7 @@ namespace Xenoblade3
             CharacterList.Items.Clear();
             for(int i = 0; i < Save.Characters.Length; i++)
             {
-                Save.Characters[i].Name = context.GetTranslatedText($"CharacterList.{i}", "Unknow");
+                Save.Characters[i].Name = context.GetTranslatedText($"CharacterList.{i}", "Unknow_Hero");
                 CharacterList.Items.Add(Save.Characters[i]);
             }
             Save.ItemBox.SelectLanguage = (int)thislanguage;
@@ -171,12 +171,22 @@ namespace Xenoblade3
             int index = CharacterList.SelectedIndex;
             if (index != -1)
             {
+                
                 TryGetNumericUpDownValue(CharacterExpNum, Save.Characters[index].Exp);
                 TryGetNumericUpDownValue(CharacterBounsExpNum, Save.Characters[index].BounsExp);
                 TryGetNumericUpDownValue(CharacterLvNum, Save.Characters[index].Level);
                 TryGetNumericUpDownValue(CharacterClassIDNum, Save.Characters[index].ID);
-                TryGetNumericUpDownValue(SoulPointNum, Save.Souls[index].SoulCount);
-
+                if (index <= 5)
+                {
+                    CharacterClassIDNum.Enabled = true;
+                    SoulPointNum.Enabled = true;
+                    TryGetNumericUpDownValue(SoulPointNum, Save.Souls[index].SoulCount);
+                }
+                else
+                {
+                    SoulPointNum.Enabled = false;
+                    CharacterClassIDNum.Enabled = false;
+                }
                 ClassDataGridView.DataSource = Save.Characters[index].Careers;
             }
         }

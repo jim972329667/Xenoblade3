@@ -44,6 +44,7 @@ ClassDataGridView.Arts_3=战技3
 ClassDataGridView.Skill_1=技能1
 ClassDataGridView.Skill_2=技能2
 ClassDataGridView.Skill_3=技能3
+ClassDataGridView.CareerID=职业序号
 ItemDataGridView.Serial=序号
 ItemDataGridView.ID=ID
 ItemDataGridView.Count=数量

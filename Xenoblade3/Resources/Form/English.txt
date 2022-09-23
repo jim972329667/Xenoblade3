@@ -35,6 +35,10 @@ CharacterList.2=Eunie
 CharacterList.3=Taion
 CharacterList.4=Lanz
 CharacterList.5=Sena
+CharacterList.6=Unknow_Hero;
+CharacterList.7=Unknow_Hero;
+
+
 ClassDataGridView.RankExp=RankExp
 ClassDataGridView.Fetters=Fetters
 ClassDataGridView.RankLevel=RankLevel

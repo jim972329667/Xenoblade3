@@ -9,7 +9,7 @@ namespace Xenoblade3
     public class Character
     {
         public const int SIZE = 0x115C;
-        public const int MaxCount = 6;
+        public const int MaxCount = 29;
 
         public string Name { get; set; }
         public UInt32 Level { get; set; }
@@ -29,7 +29,11 @@ namespace Xenoblade3
             ID = BitConverter.ToUInt32(data.GetByteSubArray(16, 4), 0);
             Careers = new Career[Career.MaxCount];
             for (int i = 0; i < Careers.Length; i++)
+            {
                 Careers[i] = new Career(data.GetByteSubArray(20 + (i * Career.SIZE), Career.SIZE));
+                Careers[i].CareerID = i + 1;
+            }
+                
             Unknow2 = data.GetByteSubArray(0x1114, 0x48);
         }
         public virtual Byte[] ToRawData()
@@ -54,7 +58,7 @@ namespace Xenoblade3
     {
         public const int SIZE = 0x44;
         public const int MaxCount = 64;
-
+        public int CareerID { get; set; }
         public UInt32 RankExp { get; set; }
         public UInt16 Fetters { get; set; }
         public byte RankLevel { get; set; }
