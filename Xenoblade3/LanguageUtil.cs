@@ -76,10 +76,11 @@ namespace Xenoblade3
         {
             if (language == null)
                 return Array.Empty<string>();
-            var txt = (string)Properties.Resources.ResourceManager.GetObject(language);
-            if(txt == null)
+            string file = $@"Resources/Form/{language}.txt";
+            //var txt = (string)Properties.Resources.ResourceManager.GetObject(language);
+            if(!File.Exists(file))
                 return Array.Empty<string>();
-
+            var txt = File.ReadAllText(file, Encoding.Default);
             string[] rawlist = txt.TrimEnd('\r', '\n').Split('\n');
             for (int i = 0; i < rawlist.Length; i++)
                 rawlist[i] = rawlist[i].TrimEnd('\r');

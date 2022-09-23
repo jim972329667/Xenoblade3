@@ -165,6 +165,7 @@ namespace Xenoblade3
                 if (Item_Ether[i].ID == 6001)
                 {
                     HasEther = true;
+                    Item_Ether[i].Names = new string[] { "Ether", "以太" };
                 }
             }
 
@@ -219,6 +220,10 @@ namespace Xenoblade3
                 item.Language = SelectLanguage;
             }
             foreach (var item in Item_Key)
+            {
+                item.Language = SelectLanguage;
+            }
+            foreach (var item in Item_Ether)
             {
                 item.Language = SelectLanguage;
             }
