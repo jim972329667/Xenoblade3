@@ -9,7 +9,7 @@ namespace Xenoblade3
     public class Character
     {
         public const int SIZE = 0x115C;
-        public const int MaxCount = 29;
+        public const int MaxCount = 64;
 
         public string Name { get; set; }
         public UInt32 Level { get; set; }

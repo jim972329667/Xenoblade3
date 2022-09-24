@@ -35,8 +35,27 @@ CharacterList.2=Eunie
 CharacterList.3=Taion
 CharacterList.4=Lanz
 CharacterList.5=Sena
-CharacterList.6=Unknow_Hero;
-CharacterList.7=Unknow_Hero;
+
+HeroList.Title=[Hero]
+HeroList.7=Ethel
+HeroList.8=Peerless Riku & Manana
+HeroList.9=Dawnhero Isurd
+HeroList.10=Glorysong Miyabi
+HeroList.11=Smoldering Cammuravi
+HeroList.12=City's Bulwark Monica
+HeroList.14=Nia, Queen of Agnus
+HeroList.15=Melia, Queen of Keves
+HeroList.16=Artificer Valdi
+HeroList.17=Dutiful Zeon
+HeroList.18=Inscrutable Teach
+HeroList.19=Craftmaiden Alexandria
+HeroList.20=Ghostbow Juniper
+HeroList.21=Undying Blade Ashera
+HeroList.22=Defiant Triton
+HeroList.23=Proudbanner Fiona
+HeroList.24=No.7 Segiri
+HeroList.25=Wrathfist Ghondor
+HeroList.26=Ashenpelt Grey
 
 
 ClassDataGridView.RankExp=RankExp
@@ -48,6 +67,7 @@ ClassDataGridView.Arts_3=Arts_3
 ClassDataGridView.Skill_1=Skill_1
 ClassDataGridView.Skill_2=Skill_2
 ClassDataGridView.Skill_3=Skill_3
+ClassDataGridView.CareerID=CareerID
 ItemDataGridView.Serial=Serial
 ItemDataGridView.ID=ID
 ItemDataGridView.Count=Count

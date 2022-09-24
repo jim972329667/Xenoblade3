@@ -51,7 +51,22 @@ namespace Xenoblade3
         {
             var context = GetContext(language);
             if(Save != null)
+            {
                 Save.ItemBox.SelectLanguage = (int)thislanguage;
+                CharacterList.Items.Clear();
+                for (int i = 0; i < Save.Characters.Length; i++)
+                {
+                    if (Save.Characters[i].ID != 0)
+                    {
+                        string title = context.GetTranslatedText($"HeroList.Title", $"[Hero]");
+                        if (i <= 5)
+                            Save.Characters[i].Name = context.GetTranslatedText($"CharacterList.{i}", $"Unknow_Hero{Save.Characters[i].ID}");
+                        else
+                            Save.Characters[i].Name = title + context.GetTranslatedText($"HeroList.{Save.Characters[i].ID}", $"Unknow_Hero{Save.Characters[i].ID}");
+                        CharacterList.Items.Add(Save.Characters[i]);
+                    }
+                }
+            }
             Properties.Settings.Default.thisLanguage = language.ToString();
             Properties.Settings.Default.Save();
             LanguageUtil.TranslateInterface(this, context);
@@ -96,6 +111,7 @@ namespace Xenoblade3
             {
                 ItemTypeComboBox.Items.Add(x.Text);
             }
+
         }
 
         #endregion
@@ -109,8 +125,15 @@ namespace Xenoblade3
             CharacterList.Items.Clear();
             for(int i = 0; i < Save.Characters.Length; i++)
             {
-                Save.Characters[i].Name = context.GetTranslatedText($"CharacterList.{i}", "Unknow_Hero");
-                CharacterList.Items.Add(Save.Characters[i]);
+                if (Save.Characters[i].ID != 0)
+                {
+                    string title = context.GetTranslatedText($"HeroList.Title", $"[Hero]");
+                    if (i <= 5)
+                        Save.Characters[i].Name = context.GetTranslatedText($"CharacterList.{i}", $"Unknow_Hero{Save.Characters[i].ID}");
+                    else
+                        Save.Characters[i].Name = title + context.GetTranslatedText($"HeroList.{Save.Characters[i].ID}", $"Unknow_Hero{Save.Characters[i].ID}");
+                    CharacterList.Items.Add(Save.Characters[i]);
+                }
             }
             Save.ItemBox.SelectLanguage = (int)thislanguage;
             CharacterList.DisplayMember = "Name";
