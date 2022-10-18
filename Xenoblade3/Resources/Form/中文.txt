@@ -56,7 +56,7 @@ HeroList.23=健旗真白
 HeroList.24=七号七饭
 HeroList.25=凶拳冈度
 HeroList.26=灰狼格雷
-
+HeroList.33=人造异刃伊诺
 
 ClassDataGridView.RankExp=职业经验
 ClassDataGridView.Fetters=羁绊

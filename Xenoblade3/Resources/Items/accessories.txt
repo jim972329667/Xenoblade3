@@ -773,3 +773,21 @@
 772	Veneris Rings [3] (20 TP at Chain Attack Start)
 773	Saturni Rings [3] (40% ATK)
 774	Solis Rings [3] (40% Healing)
+775	[blank]
+776	[blank]
+777	Carbide Temple Guard 3
+778	Sapphire Belt [3]
+779	Circlet of All-Knowing [3]	
+780	Nanotech Gloves [3]
+781	Carbide Support [3]
+782	Soulgaze Headband [3]
+783	Full Weak Guard [3]
+784	Mighty Bangle [3]
+785	Silver Gauntlet [3]
+786	Mask of Banishing [3]
+787	Accomplished Hairpiece
+788	Accomplished Crown
+789	Accomplished Necklace
+790	Accomplished Ring
+791	Accomplished Vambraces
+792	Accomplished Sash

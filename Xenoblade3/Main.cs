@@ -194,11 +194,11 @@ namespace Xenoblade3
             int index = CharacterList.SelectedIndex;
             if (index != -1)
             {
-                
-                TryGetNumericUpDownValue(CharacterExpNum, Save.Characters[index].Exp);
-                TryGetNumericUpDownValue(CharacterBounsExpNum, Save.Characters[index].BounsExp);
-                TryGetNumericUpDownValue(CharacterLvNum, Save.Characters[index].Level);
-                TryGetNumericUpDownValue(CharacterClassIDNum, Save.Characters[index].ID);
+                Character character = CharacterList.SelectedItem as Character;
+                TryGetNumericUpDownValue(CharacterExpNum, character.Exp);
+                TryGetNumericUpDownValue(CharacterBounsExpNum, character.BounsExp);
+                TryGetNumericUpDownValue(CharacterLvNum, character.Level);
+                TryGetNumericUpDownValue(CharacterClassIDNum, character.ID);
                 if (index <= 5)
                 {
                     CharacterClassIDNum.Enabled = true;
@@ -210,7 +210,7 @@ namespace Xenoblade3
                     SoulPointNum.Enabled = false;
                     CharacterClassIDNum.Enabled = false;
                 }
-                ClassDataGridView.DataSource = Save.Characters[index].Careers;
+                ClassDataGridView.DataSource = character.Careers;
             }
         }
         private void TryGetNumericUpDownValue(NumericUpDown numericUpDown,uint value)
