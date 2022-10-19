@@ -27,6 +27,8 @@ Main.AddCollectiblesButton=添加所有收藏品(99)
 Main.AddAccessoriesButton=添加所有饰品(20)
 Main.ExportItemButton=导出物品
 Main.ImportItemButton=导入物品
+Main.SPECTab=灵魂骇入
+Main.GetAllSPEC=获取全部灵魂骇入技能
 
 
 CharacterList.0=诺亚
@@ -73,3 +75,7 @@ ItemDataGridView.ID=ID
 ItemDataGridView.Count=数量
 ItemDataGridView.Name=名字
 ItemDataGridView.Delete=删除
+
+
+SPECDataGridView.IsGet=是否获得
+SPECDataGridView.Index=技能序号

@@ -27,6 +27,8 @@ Main.AddCollectiblesButton=Add 99 of all collectibles
 Main.AddAccessoriesButton=Add 20 of all accessories
 Main.ExportItemButton=ExportItem
 Main.ImportItemButton=ImportItem
+Main.SPECTab=SPEC_Tab
+Main.GetAllSPEC=Get All Skill SPEC
 
 
 CharacterList.0=Noah
@@ -73,3 +75,6 @@ ItemDataGridView.ID=ID
 ItemDataGridView.Count=Count
 ItemDataGridView.Name=Name
 ItemDataGridView.Delete=Delete
+
+SPECDataGridView.IsGet=IsGet
+SPECDataGridView.Index=Skill Serial

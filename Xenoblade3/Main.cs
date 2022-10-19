@@ -106,6 +106,10 @@ namespace Xenoblade3
                 column.HeaderText = context.GetTranslatedText($"ItemDataGridView.{column.DataPropertyName}", column.HeaderText);
             }
 
+            foreach(dynamic column in SPECDataGridView.Columns)
+            {
+                column.HeaderText = context.GetTranslatedText($"SPECDataGridView.{column.DataPropertyName}", column.HeaderText);
+            }
             ItemTypeComboBox.Items.Clear();
             foreach (TabPage x in tabControl2.TabPages)
             {
@@ -143,6 +147,8 @@ namespace Xenoblade3
             Item_CollectiblesDataGridView.DataSource = Save.ItemBox.Item_Collectibles;
             Item_AccessoriesDataGridView.DataSource = Save.ItemBox.Item_Accessories;
             Item_KeyDataGridView.DataSource = Save.ItemBox.Item_Key;
+
+            SPECDataGridView.DataSource = Save.Skill_SPEC.SPEC_List;
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -463,6 +469,14 @@ namespace Xenoblade3
                 items = items.OrderBy(x => x.ID == 0).ThenBy(x => x.Name).ToArray();
 
             data.DataSource = items;
+        }
+
+        private void GetAllSPEC_Click(object sender, EventArgs e)
+        {
+            foreach(var skill in Save.Skill_SPEC.SPEC_List)
+            {
+                skill.IsGet = true;
+            }
         }
     }
 }

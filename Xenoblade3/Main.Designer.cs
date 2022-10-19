@@ -39,6 +39,16 @@
             this.SoulPoint = new System.Windows.Forms.Label();
             this.ClassGroupBox = new System.Windows.Forms.GroupBox();
             this.ClassDataGridView = new System.Windows.Forms.DataGridView();
+            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rankExpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rankLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fettersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arts_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arts_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arts_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skill_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skill_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skill_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.careerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CharacterClassList = new System.Windows.Forms.ListBox();
             this.CharacterClassIDNum = new System.Windows.Forms.NumericUpDown();
@@ -95,22 +105,19 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumnKeyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SPECTab = new System.Windows.Forms.TabPage();
+            this.GetAllSPEC = new System.Windows.Forms.Button();
+            this.SPECDataGridView = new System.Windows.Forms.DataGridView();
+            this.singleSPECBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rankExpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rankLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fettersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arts_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arts_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arts_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skill_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skill_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skill_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsGet = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.BaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GoldNum)).BeginInit();
@@ -138,6 +145,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Item_AccessoriesDataGridView)).BeginInit();
             this.Item_Key.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_KeyDataGridView)).BeginInit();
+            this.SPECTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SPECDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.singleSPECBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +156,7 @@
             this.tabControl1.Controls.Add(this.BaseTab);
             this.tabControl1.Controls.Add(this.CharacterTab);
             this.tabControl1.Controls.Add(this.ItemTab);
+            this.tabControl1.Controls.Add(this.SPECTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl1.Location = new System.Drawing.Point(0, 31);
@@ -294,6 +305,84 @@
             this.ClassDataGridView.RowTemplate.Height = 23;
             this.ClassDataGridView.Size = new System.Drawing.Size(699, 350);
             this.ClassDataGridView.TabIndex = 2;
+            // 
+            // ClassID
+            // 
+            this.ClassID.DataPropertyName = "CareerID";
+            this.ClassID.HeaderText = "ClassID";
+            this.ClassID.Name = "ClassID";
+            // 
+            // rankExpDataGridViewTextBoxColumn
+            // 
+            this.rankExpDataGridViewTextBoxColumn.DataPropertyName = "RankExp";
+            this.rankExpDataGridViewTextBoxColumn.HeaderText = "RankExp";
+            this.rankExpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rankExpDataGridViewTextBoxColumn.Name = "rankExpDataGridViewTextBoxColumn";
+            this.rankExpDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // rankLevelDataGridViewTextBoxColumn
+            // 
+            this.rankLevelDataGridViewTextBoxColumn.DataPropertyName = "RankLevel";
+            this.rankLevelDataGridViewTextBoxColumn.HeaderText = "RankLevel";
+            this.rankLevelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rankLevelDataGridViewTextBoxColumn.Name = "rankLevelDataGridViewTextBoxColumn";
+            this.rankLevelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fettersDataGridViewTextBoxColumn
+            // 
+            this.fettersDataGridViewTextBoxColumn.DataPropertyName = "Fetters";
+            this.fettersDataGridViewTextBoxColumn.HeaderText = "Fetters";
+            this.fettersDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fettersDataGridViewTextBoxColumn.Name = "fettersDataGridViewTextBoxColumn";
+            this.fettersDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Arts_1
+            // 
+            this.Arts_1.DataPropertyName = "Arts_1";
+            this.Arts_1.HeaderText = "Arts_1";
+            this.Arts_1.MinimumWidth = 6;
+            this.Arts_1.Name = "Arts_1";
+            this.Arts_1.Width = 125;
+            // 
+            // Arts_2
+            // 
+            this.Arts_2.DataPropertyName = "Arts_2";
+            this.Arts_2.HeaderText = "Arts_2";
+            this.Arts_2.MinimumWidth = 6;
+            this.Arts_2.Name = "Arts_2";
+            this.Arts_2.Width = 125;
+            // 
+            // Arts_3
+            // 
+            this.Arts_3.DataPropertyName = "Arts_3";
+            this.Arts_3.HeaderText = "Arts_3";
+            this.Arts_3.MinimumWidth = 6;
+            this.Arts_3.Name = "Arts_3";
+            this.Arts_3.Width = 125;
+            // 
+            // Skill_1
+            // 
+            this.Skill_1.DataPropertyName = "Skill_1";
+            this.Skill_1.HeaderText = "Skill_1";
+            this.Skill_1.MinimumWidth = 6;
+            this.Skill_1.Name = "Skill_1";
+            this.Skill_1.Width = 125;
+            // 
+            // Skill_2
+            // 
+            this.Skill_2.DataPropertyName = "Skill_2";
+            this.Skill_2.HeaderText = "Skill_2";
+            this.Skill_2.MinimumWidth = 6;
+            this.Skill_2.Name = "Skill_2";
+            this.Skill_2.Width = 125;
+            // 
+            // Skill_3
+            // 
+            this.Skill_3.DataPropertyName = "Skill_3";
+            this.Skill_3.HeaderText = "Skill_3";
+            this.Skill_3.MinimumWidth = 6;
+            this.Skill_3.Name = "Skill_3";
+            this.Skill_3.Width = 125;
             // 
             // careerBindingSource
             // 
@@ -923,6 +1012,47 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 72;
             // 
+            // SPECTab
+            // 
+            this.SPECTab.Controls.Add(this.GetAllSPEC);
+            this.SPECTab.Controls.Add(this.SPECDataGridView);
+            this.SPECTab.Location = new System.Drawing.Point(4, 26);
+            this.SPECTab.Name = "SPECTab";
+            this.SPECTab.Padding = new System.Windows.Forms.Padding(3);
+            this.SPECTab.Size = new System.Drawing.Size(1059, 539);
+            this.SPECTab.TabIndex = 3;
+            this.SPECTab.Text = "SPECTab";
+            this.SPECTab.UseVisualStyleBackColor = true;
+            // 
+            // GetAllSPEC
+            // 
+            this.GetAllSPEC.Location = new System.Drawing.Point(384, 200);
+            this.GetAllSPEC.Name = "GetAllSPEC";
+            this.GetAllSPEC.Size = new System.Drawing.Size(182, 44);
+            this.GetAllSPEC.TabIndex = 1;
+            this.GetAllSPEC.Text = "Get All Skill SPEC";
+            this.GetAllSPEC.UseVisualStyleBackColor = true;
+            this.GetAllSPEC.Click += new System.EventHandler(this.GetAllSPEC_Click);
+            // 
+            // SPECDataGridView
+            // 
+            this.SPECDataGridView.AutoGenerateColumns = false;
+            this.SPECDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SPECDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Index,
+            this.IsGet,
+            this.nameDataGridViewTextBoxColumn});
+            this.SPECDataGridView.DataSource = this.singleSPECBindingSource;
+            this.SPECDataGridView.Location = new System.Drawing.Point(9, 7);
+            this.SPECDataGridView.Name = "SPECDataGridView";
+            this.SPECDataGridView.RowTemplate.Height = 23;
+            this.SPECDataGridView.Size = new System.Drawing.Size(302, 524);
+            this.SPECDataGridView.TabIndex = 0;
+            // 
+            // singleSPECBindingSource
+            // 
+            this.singleSPECBindingSource.DataSource = typeof(Xenoblade3.Single_SPEC);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -977,83 +1107,28 @@
             this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.LanguageToolStripMenuItem_Click);
             // 
-            // ClassID
+            // Index
             // 
-            this.ClassID.DataPropertyName = "CareerID";
-            this.ClassID.HeaderText = "ClassID";
-            this.ClassID.Name = "ClassID";
+            this.Index.DataPropertyName = "Index";
+            this.Index.HeaderText = "Skill Serial";
+            this.Index.Name = "Index";
+            this.Index.ReadOnly = true;
+            this.Index.Width = 130;
             // 
-            // rankExpDataGridViewTextBoxColumn
+            // IsGet
             // 
-            this.rankExpDataGridViewTextBoxColumn.DataPropertyName = "RankExp";
-            this.rankExpDataGridViewTextBoxColumn.HeaderText = "RankExp";
-            this.rankExpDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rankExpDataGridViewTextBoxColumn.Name = "rankExpDataGridViewTextBoxColumn";
-            this.rankExpDataGridViewTextBoxColumn.Width = 125;
+            this.IsGet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IsGet.DataPropertyName = "IsGet";
+            this.IsGet.HeaderText = "IsGet";
+            this.IsGet.Name = "IsGet";
+            this.IsGet.Width = 53;
             // 
-            // rankLevelDataGridViewTextBoxColumn
+            // nameDataGridViewTextBoxColumn
             // 
-            this.rankLevelDataGridViewTextBoxColumn.DataPropertyName = "RankLevel";
-            this.rankLevelDataGridViewTextBoxColumn.HeaderText = "RankLevel";
-            this.rankLevelDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rankLevelDataGridViewTextBoxColumn.Name = "rankLevelDataGridViewTextBoxColumn";
-            this.rankLevelDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fettersDataGridViewTextBoxColumn
-            // 
-            this.fettersDataGridViewTextBoxColumn.DataPropertyName = "Fetters";
-            this.fettersDataGridViewTextBoxColumn.HeaderText = "Fetters";
-            this.fettersDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fettersDataGridViewTextBoxColumn.Name = "fettersDataGridViewTextBoxColumn";
-            this.fettersDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Arts_1
-            // 
-            this.Arts_1.DataPropertyName = "Arts_1";
-            this.Arts_1.HeaderText = "Arts_1";
-            this.Arts_1.MinimumWidth = 6;
-            this.Arts_1.Name = "Arts_1";
-            this.Arts_1.Width = 125;
-            // 
-            // Arts_2
-            // 
-            this.Arts_2.DataPropertyName = "Arts_2";
-            this.Arts_2.HeaderText = "Arts_2";
-            this.Arts_2.MinimumWidth = 6;
-            this.Arts_2.Name = "Arts_2";
-            this.Arts_2.Width = 125;
-            // 
-            // Arts_3
-            // 
-            this.Arts_3.DataPropertyName = "Arts_3";
-            this.Arts_3.HeaderText = "Arts_3";
-            this.Arts_3.MinimumWidth = 6;
-            this.Arts_3.Name = "Arts_3";
-            this.Arts_3.Width = 125;
-            // 
-            // Skill_1
-            // 
-            this.Skill_1.DataPropertyName = "Skill_1";
-            this.Skill_1.HeaderText = "Skill_1";
-            this.Skill_1.MinimumWidth = 6;
-            this.Skill_1.Name = "Skill_1";
-            this.Skill_1.Width = 125;
-            // 
-            // Skill_2
-            // 
-            this.Skill_2.DataPropertyName = "Skill_2";
-            this.Skill_2.HeaderText = "Skill_2";
-            this.Skill_2.MinimumWidth = 6;
-            this.Skill_2.Name = "Skill_2";
-            this.Skill_2.Width = 125;
-            // 
-            // Skill_3
-            // 
-            this.Skill_3.DataPropertyName = "Skill_3";
-            this.Skill_3.HeaderText = "Skill_3";
-            this.Skill_3.MinimumWidth = 6;
-            this.Skill_3.Name = "Skill_3";
-            this.Skill_3.Width = 125;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Visible = false;
             // 
             // Main
             // 
@@ -1097,6 +1172,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Item_AccessoriesDataGridView)).EndInit();
             this.Item_Key.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Item_KeyDataGridView)).EndInit();
+            this.SPECTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SPECDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.singleSPECBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1188,6 +1266,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Skill_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Skill_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Skill_3;
+        private System.Windows.Forms.TabPage SPECTab;
+        private System.Windows.Forms.DataGridView SPECDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn indexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource singleSPECBindingSource;
+        private System.Windows.Forms.Button GetAllSPEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Index;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsGet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }
 

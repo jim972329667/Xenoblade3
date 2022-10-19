@@ -777,7 +777,7 @@
 776	[blank]
 777	Carbide Temple Guard 3
 778	Sapphire Belt [3]
-779	Circlet of All-Knowing [3]	
+779	Circlet of All-Knowing [3]
 780	Nanotech Gloves [3]
 781	Carbide Support [3]
 782	Soulgaze Headband [3]

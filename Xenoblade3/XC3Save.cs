@@ -13,6 +13,7 @@ namespace Xenoblade3
         {
             { "Money", new Loc(0x20, sizeof(UInt32))},
             { "Complete", new Loc(0xA6B, 0x1)},
+            { "Skill_SPEC", new Loc(0x2BF0, 0x2C)},
             { "Characters", new Loc(0xE3A0, Character.SIZE * Character.MaxCount)},
             { "Souls", new Loc(0x53AA0, Soul.SIZE * Soul.MaxCount)},//6* 0x3C
             { "GemsHeader", new Loc(0x53C08, 0x28)},
@@ -24,6 +25,7 @@ namespace Xenoblade3
         public Soul[] Souls { get; set; }
         public UInt16[] GemsHeader { get; set; }
         public ItemBox ItemBox { get; set; }
+        public SPEC Skill_SPEC { get; set; }
         public XC3Save(byte[] data)
         {
             BaseData = data;
@@ -31,6 +33,8 @@ namespace Xenoblade3
             Money = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Money"].StartLoc, LOC["Money"].Length), 0);
 
             Complete = data.GetByteSubArray(LOC["Complete"].StartLoc, LOC["Complete"].Length);
+
+            Skill_SPEC = new SPEC(data.GetByteSubArray(LOC["Skill_SPEC"].StartLoc, LOC["Skill_SPEC"].Length));
 
             Characters = new Character[Character.MaxCount];
             for (int i = 0; i < Characters.Length; i++)
@@ -54,6 +58,8 @@ namespace Xenoblade3
             LOC["Money"].Data = BitConverter.GetBytes(Money);
 
             LOC["Complete"].Data = Complete;
+
+            LOC["Skill_SPEC"].Data = Skill_SPEC.ToRawData();
 
             foreach (var character in Characters)
             {
@@ -98,6 +104,8 @@ namespace Xenoblade3
             List<uint> list = new List<uint>();
             for(int i=0; i < ItemBox.Item_Gems.Length; i++)
             {
+                if (ItemBox.Item_Gems[i] == null)
+                    continue;
                 if (ItemBox.Item_Gems[i].ID != 0)
                 {
                     if (list.Contains(ItemBox.Item_Gems[i].ID))
